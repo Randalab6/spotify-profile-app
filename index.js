@@ -52,6 +52,11 @@ app.get('/login', (req, res) => {
   res.redirect(`https://accounts.spotify.com/authorize?${queryParams}`);
 });
 
+//stub call response
+app.get('/callback', (req, res) => {
+  res.send('Callback');
+});
+
 //listen for connection
 app.listen(port, () => {
     console.log(`Express app listening at http://localhost:${port}`);
