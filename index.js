@@ -1,0 +1,13 @@
+const express = require('express');
+const app = express();
+const port = 8888;
+
+//route handler 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+  });
+
+//listen for connection
+app.listen(port, () => {
+    console.log(`Express app listening at http://localhost:${port}`);
+  });
