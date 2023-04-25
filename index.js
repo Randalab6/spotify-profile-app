@@ -4,9 +4,18 @@ const port = 8888;
 
 //route handler 
 app.get('/', (req, res) => {
-    res.send('Hello World! -- test');
+    const data = {
+      name: 'Ruru',
+      isAwesome: true
+    }
+    res.json(data)
   });
 
+  app.get('/param-generators', (req, res) => {
+    const {name, isAwesome } = req.query;
+    res.send(`${name} was ${JSON.parse(isAwesome) ? 'really' : 'always'} awesome & amazing`)
+  });
+  
 //listen for connection
 app.listen(port, () => {
     console.log(`Express app listening at http://localhost:${port}`);
