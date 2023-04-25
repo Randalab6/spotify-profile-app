@@ -16,9 +16,8 @@ app.get('/', (req, res) => {
     res.json(data)
   });
 
-  app.get('/param-generators', (req, res) => {
-    const {name, isAwesome } = req.query;
-    res.send(`${name} was ${JSON.parse(isAwesome) ? 'really' : 'always'} awesome & amazing`)
+  app.get('/login', (req, res) => {
+    res.redirect(`https://accounts.spotify.com/authorize?client_id=${CLIENT_ID}&response_type=code&redirect_uri=${REDIRECT_URI}`);
   });
   
 //listen for connection
