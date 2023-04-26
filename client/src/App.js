@@ -13,6 +13,14 @@ function App() {
 
     console.log(accessToken);
     console.log(refreshToken);
+
+    //Express app's endpoints results in cors issue so a proxy 8888 has been added to package.json.
+    if (refreshToken) {
+      fetch(`/refresh_token?refresh_token=${refreshToken}`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.error(err));
+    }
   }, []);
 
   return (
