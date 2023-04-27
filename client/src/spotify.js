@@ -114,4 +114,20 @@ const getAccessToken = () => {
   return false;
 };
   
-  export const accessToken = getAccessToken();
+export const accessToken = getAccessToken();
+
+/**
+ * Axios global request headers
+ * https://github.com/axios/axios#global-axios-defaults
+ */
+axios.defaults.baseURL = 'https://api.spotify.com/v1';
+axios.defaults.headers['Authorization'] = `Bearer ${accessToken}`;
+axios.defaults.headers['Content-Type'] = 'application/json';
+
+/**
+ * Get Current User's Profile
+ * https://developer.spotify.com/documentation/web-api/reference/#endpoint-get-current-users-profile
+ * @returns {Promise}
+ */
+// since we ser the baseURL globally, we just need to inclue '/me' to get endpoint to get the current logged-in user's profile
+export const getCurrentUserProfile = () => axios.get('/me');
