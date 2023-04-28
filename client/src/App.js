@@ -11,6 +11,14 @@ import { catchErrors } from './utils'
 import './App.css';
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --black: #121212;
+    --green: #1DB954;
+    --white: #ffffff;
+
+    --font: 'Circular Std', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -24,16 +32,17 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
+    font-family: var(--font);
   }
 `;
 
 const StyledLoginButton = styled.a`
-  background-color: green;
-  color: white;
+  background-color: var(--green);
+  color: var(--white);
   padding: 10px 20px;
-  margin: 20px auto;
+  margin: 20px;
   border-radius: 30px;
   display: inline-block;
 `;
