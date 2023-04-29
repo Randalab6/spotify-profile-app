@@ -38,8 +38,6 @@ const Profile = () => {
     catchErrors(fetchData());
   }, []);
 
-  console.log(topTracks);
-
   return (
     <>
       {profile && (
@@ -63,7 +61,7 @@ const Profile = () => {
               </div>
             </div>
           </StyledHeader>
-          
+
           {topArtists && topTracks && playlists && (
             <main>
               <SectionWrapper title="Top artists this month" seeAllLink="/top-artists">
