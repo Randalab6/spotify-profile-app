@@ -46,6 +46,8 @@ const Playlists = () => {
 
   }, [playlistsData]);
 
+  
+
   return (
     <main>
       <SectionWrapper title="Public Playlists" breadcrumb={true}>
