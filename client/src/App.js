@@ -8,7 +8,7 @@ import {
 import { accessToken, logout} from './spotify';
 import { GlobalStyle } from './styles';
 import styled from 'styled-components/macro';
-import { Login, Profile } from './pages';
+import { Login, Profile, TopArtists, TopTracks, Playlists } from './pages';
 
 const StyledLogoutButton = styled.button`
   position: absolute;
