@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { catchErrors } from '../utils'
-import { getPlaylistById } from '../spotify';
+import { getPlaylistById, getAudioFeaturesForTracks} from '../spotify';
 import { TrackList, SectionWrapper } from '../components';
 import { StyledHeader } from '../styles';
 
@@ -13,6 +13,8 @@ const Playlist = () => {
   const [tracks, setTracks] = useState(null);
   //to fetch audio features for each track
   const [audioFeatures, setAudioFeatures] = useState(null);
+  const [sortValue, setSortValue] = useState('');
+  const sortOptions = ['danceability', 'tempo', 'energy'];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,7 +45,6 @@ const Playlist = () => {
       ...tracks ? tracks : [],
       ...tracksData.items
     ]));
-
     catchErrors(fetchMoreData());
   
     // Also update the audioFeatures state variable using the track IDs
@@ -56,14 +57,32 @@ const Playlist = () => {
       ]));
     };
     catchErrors(fetchAudioFeatures());
+
   }, [tracksData]);
 
-  const tracksForTracklist = useMemo(() => {
-    if (!tracks) {
-      return;
+  // Map over tracks and add audio_features property to each track
+  const tracksWithAudioFeatures = useMemo(() => {
+    if (!tracks || !audioFeatures) {
+      return null;
     }
-    return tracks.map(({ track }) => track);
-  }, [tracks]);
+
+    return tracks.map(({ track }) => {
+      const trackToAdd = track;
+
+      if (!track.audio_features) {
+        const audioFeaturesObj = audioFeatures.find(item => {
+          if (!item || !track) {
+            return null;
+          }
+          return item.id === track.id;
+        });
+
+        trackToAdd['audio_features'] = audioFeaturesObj;
+      }
+
+      return trackToAdd;
+    });
+  }, [tracks, audioFeatures]);
 
   return (
     <>
@@ -89,11 +108,12 @@ const Playlist = () => {
 
           <main>
             <SectionWrapper title="Playlist" breadcrumb={true}>
-              {tracksForTracklist && (
-                <TrackList tracks={tracksForTracklist} />
+              {tracksWithAudioFeatures && (
+                <TrackList tracks={tracksWithAudioFeatures} />
               )}
             </SectionWrapper>
           </main>
+          
         </>
       )}
     </>
