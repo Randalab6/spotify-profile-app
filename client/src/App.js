@@ -57,8 +57,8 @@ function App() {
           <Router>
           <ScrollToTop />
           <Routes>
-            {/* <Route path="/top-artists" element={<TopArtists />}/>
-            <Route path="/top-tracks" element={<TopTracks />}/> */}
+            <Route path="/top-artists" element={<TopArtists />}/>
+            <Route path="/top-tracks" element={<TopTracks />}/> 
             <Route path="/playlists/:id" element={<Playlist />}/>
             <Route path="/playlists" element={<Playlists />}/>
             <Route path="/" element={<Profile />} />
