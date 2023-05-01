@@ -4,9 +4,9 @@ A web app to demo & share personal spotify data
 
 Project Link:  https://demofiy.herokuapp.com/
 
-   <img width="600" alt="Screenshot 2023-04-30 at 10 21 22 PM" src="https://user-images.githubusercontent.com/31637771/235398100-265e777d-c064-4442-b848-66f6dd6bad2b.png">
+   <img width="800" alt="Screenshot 2023-04-30 at 10 21 22 PM" src="https://user-images.githubusercontent.com/31637771/235398100-265e777d-c064-4442-b848-66f6dd6bad2b.png">
 
-   <img width="600" alt="Screenshot 2023-04-30 at 7 48 06 PM" src="https://user-images.githubusercontent.com/31637771/235398296-8de5e15a-bbcc-4b6f-a164-4825d4e6dff8.png">
+   <img width="800" alt="Screenshot 2023-04-30 at 7 48 06 PM" src="https://user-images.githubusercontent.com/31637771/235398296-8de5e15a-bbcc-4b6f-a164-4825d4e6dff8.png">
 
 ## Built With
 
