@@ -63,4 +63,7 @@ Project Link:  https://demofiy.herokuapp.com/
     git push heroku main
     ```
     
- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## License
+
+This project is licensed under the MIT License
