@@ -10,6 +10,7 @@ Project Link:  https://demofiy.herokuapp.com/
 
 
 
+
 ## Local Installation & Set Up
 
 1. Register a Spotify App in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/) and add `http://localhost:8888/callback` as a Redirect URI in the app settings
@@ -66,4 +67,4 @@ Project Link:  https://demofiy.herokuapp.com/
 
 ## License
 
-This project is licensed under the MIT License
+Distributed under the MIT License. See LICENSE.txt for more information.
