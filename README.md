@@ -47,8 +47,8 @@ Project Link:  https://demofiy.herokuapp.com/
    Based on the values in your `.env` file, the `CLIENT_ID`, `CLIENT_SECRET`, `REDIRECT_URI`, and `FRONTEND_URI` key value pairs. Make sure to replace the `localhost` URLs with your heroku app's URL.
 
    ```env
-   REDIRECT_URI: http://your-app-name.herokuapp.com/callback
-   FRONTEND_URI: http://your-app-name.herokuapp.com
+   REDIRECT_URI: http://demofiy.herokuapp.com/callback
+   FRONTEND_URI: http://demofiy.herokuapp.com
    ```
 
 5. Push to Heroku
@@ -56,3 +56,4 @@ Project Link:  https://demofiy.herokuapp.com/
     ```shell
     git push heroku main
     ```
+
